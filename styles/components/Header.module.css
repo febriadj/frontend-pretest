@@ -1,0 +1,84 @@
+.header {
+  padding: 0 0 40px 0;
+  display: grid;
+  grid-template-columns: 500px 1fr;
+  gap: 20px;
+  grid-template-areas:
+  "search-bar pagination"
+  "bottom bottom";
+}
+.search-bar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  grid-area: search-bar;
+  padding: 10px 15px;
+  background: #00000080;
+  border-radius: 2rem;
+}
+.search-bar .control {
+  background: transparent;
+  width: 100%;
+}
+.search-bar .control::placeholder {
+  color: #ffffff80;
+}
+.search-bar .submit-btn {
+  background: #32363bdd;
+  padding: 5px 15px;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+.pagination {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  align-items: center;
+  grid-area: pagination;
+}
+.pagination .btn {
+  background: #32363b;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.pagination .btn.off {
+  opacity: 0.5;
+}
+.icon {
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header .count {
+  padding: 5px 15px;
+  border-radius: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #00000080;
+}
+.bottom {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  grid-area: bottom;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    grid-template-columns: auto 1fr;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .header {
+    grid-template-areas:
+    "search-bar search-bar"
+    "bottom pagination";
+  }
+}
