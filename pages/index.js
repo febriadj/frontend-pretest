@@ -21,7 +21,7 @@ function Home() {
   const handleGetMovies = async () => {
     const { page, title } = params;
 
-    const url = `http://www.omdbapi.com/?apikey=b3107253&type=movie&page=${page}&s=${title}`;
+    const url = `${process.env.OMDB_API_KEY}&type=movie&page=${page}&s=${title}`;
     const res = await (await fetch(url)).json();
 
     setMovies(res);

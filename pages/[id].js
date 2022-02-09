@@ -5,7 +5,7 @@ import styles from '../styles/Details.module.css';
 export async function getServerSideProps(context) {
   const { id } = context.query;
 
-  const url = `http://www.omdbapi.com/?apikey=b3107253&i=${id}&plot=full`;
+  const url = `${process.env.OMDB_API_KEY}&i=${id}&plot=full`;
   const movie = await (await fetch(url)).json();
 
   return {
